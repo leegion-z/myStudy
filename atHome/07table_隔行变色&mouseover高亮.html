@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		th,td{
+			height: 30px;
+			width: 150px;
+			border: 1px solid #ccc;
+			text-align: center;
+
+
+		}
+		
+	</style>
+</head>
+<body >
+	<table>
+		<thead>
+			<th>ID</th>
+			<th>姓名</th>
+			<th>年龄</th>
+			<th>操作</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>dsaj</td>
+				<td>11</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>前二无群</td>
+				<td>13</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>从现在</td>
+				<td>18</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>vcx</td>
+				<td>12</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>1</td>
+				<td>dsaj</td>
+				<td>11</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>前二无群</td>
+				<td>13</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>从现在</td>
+				<td>18</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>vcx</td>
+				<td>12</td>
+				<td><a href="javascript:;">删除</a></td>
+			</tr>		
+		</tbody>
+	</table>
+
+	
+
+
+	<script type="text/javascript">
+		var tab = document.querySelector('table');
+		var oldColor = '';
+		for(var i = 0 ; i<tab.tBodies[0].rows.length ; i++){
+			
+			tab.tBodies[0].rows[i].onmouseover = function(){
+				oldColor = this.style.background;
+				this.style.background = '#ff0';
+			};
+			tab.tBodies[0].rows[i].onmouseout = function(){
+				this.style.background = oldColor;
+			};
+
+
+
+			if(i%2){
+				tab.tBodies[0].rows[i].style.background = '';
+			}else{
+				tab.tBodies[0].rows[i].style.background = '#ccc';
+			};			
+		}
+	
+	</script>
+</body>
+</html>

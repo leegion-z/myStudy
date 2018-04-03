@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		div{
+			float: left;
+			margin-right: 10px;
+		}
+		#photo {
+			width: 30px;
+			height: 30px;
+			background: #ff0;
+			border: 2px solid #ccc;
+			
+		}
+		#menu {
+			width: 100px;
+			height: 200px;
+			border:1px solid #999;
+			background: #ddd;
+			display: none;
+		}
+		
+	</style>
+</head>
+<body >
+	<div id="photo"></div>
+	<div id="menu"></div>
+
+
+	<script type="text/javascript">
+		var pho = document.getElementById('photo');
+		var menu = document.getElementById('menu');
+		var timer = null;
+
+		menu.onmouseover = pho.onmouseover = function(){
+			clearTimeout(timer);
+			menu.style.display = 'block';
+		}
+
+		menu.onmouseout = pho.onmouseout = function(){
+			timer = setTimeout(function(){
+				menu.style.display = 'none';
+			},500);
+		}
+
+		//onmouseover onmouseout合并 简化代码
+		/*
+		onmouseover onmouseout合并前：
+
+		pho.onmouseover = function(){
+			clearTimeout(timer);
+			menu.style.display = 'block';
+		}
+
+		pho.onmouseout = function(){
+			timer = setTimeout(function(){
+				menu.style.display = 'none';
+			},500);
+		}
+
+		menu.onmouseover = function(){
+			clearTimeout(timer);
+			menu.style.display = 'block';
+		}
+
+		menu.onmouseout = function(){
+			timer = setTimeout(function(){
+				menu.style.display = 'none';
+			},500);
+		}
+
+		 */
+		
+		
+
+
+
+		
+		
+
+	
+	</script>
+</body>
+</html>

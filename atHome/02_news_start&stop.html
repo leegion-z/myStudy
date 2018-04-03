@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css"></style>
+</head>
+<body>
+	<input type="button" value="开始" id="start">
+	<input type="button" value="结束" id="stop">
+	<script type="text/javascript">
+		var start = document.getElementById('start');
+		var stop = document.getElementById('stop');
+		var body = document.querySelector('body');
+		var timer = null;
+			start.onclick = function(){
+				timer = setInterval(function(){
+					var box = document.createElement('div');
+					body.appendChild(box);
+					box.innerHTML = '您有一则新消息';
+
+				},1000)
+			}
+			stop.onclick = function(){
+				clearInterval(timer);
+			}
+
+	</script>
+</body>
+</html>

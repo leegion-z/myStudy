@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		#content{
+			margin: 10px;
+		}
+		ul li {
+			height: 20px;
+			width: 300px;
+			border: 1px solid #ccc;
+			padding: 5px;
+			line-height: 20px;
+			margin:10px; 
+
+		}
+
+		ul li button{
+			float: right;
+		}
+		
+	</style>
+</head>
+<body >
+	<input type="text" placeholder="请添加关键字" id="content" >
+	<input type="button" value="添加" id="add">
+	<ul>
+
+	</ul>
+	
+
+
+	<script type="text/javascript">
+		var content = document.getElementById('content');
+		var addBtn = document.getElementById('add');
+		var ul = document.querySelector('ul')
+
+		addBtn.onclick = function(){
+			var li = document.createElement('li');
+			li.innerHTML = content.value + '<button>删除</button>';
+			var lis = document.querySelectorAll('ul li');
+			content.value = '';
+			if(lis.length === 0){
+				ul.appendChild(li);
+			}else{
+				ul.insertBefore(li,lis[0]);
+			}
+			for(var i=0;i<lis.length;i++){
+				var lis = document.querySelectorAll('ul li');
+				var btn = lis[i].querySelector('button');
+				btn.onclick = function(){
+					ul.removeChild(this.parentNode);
+				}
+			}		
+		}
+	
+	</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		span{
+			color: #fff;
+			font-size: 30px;
+			font-weight: bold;
+		}
+	</style>
+</head>
+<body style="background: #000; color: #fff;">
+	<span>0</span>
+	<span>0</span>
+	:
+	<span>0</span>
+	<span>0</span>
+	:
+	<span>0</span>
+	<span>0</span>
+
+
+	<script type="text/javascript">
+	var span = document.querySelectorAll('span');
+	function changeTow(n){
+		if(n<0){
+			return '0'+n;
+		}else{
+			return ''+n;
+		}
+
+	};
+	function getTime(){
+		var now = new Date();
+		var nowTimer = changeTow(now.getHours()) + 
+					   changeTow(now.getMinutes()) +
+					   changeTow(now.getSeconds());
+		for(var i = 0; i<nowTimer.length; i++){
+			span[i].innerHTML = nowTimer.charAt(i);
+			// 在字符串中使用nowTimer[i],会出现兼容性问题，使用.charAt没有问题。
+		}
+	}
+	setInterval(getTime,1000);
+	getTime(); //保证在页面打开时就是当前时间
+
+	</script>
+</body>
+</html>
